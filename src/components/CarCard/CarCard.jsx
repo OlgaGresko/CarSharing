@@ -42,7 +42,10 @@ export const CarCard = ({ advert, toggleCarModal }) => {
 
   return (
     <div className={css.container}>
-      <img className={css.photo} src={advert.img} alt="Photo of a car" />
+      <div className={css.image_container}>
+        <img className={css.image} src={advert.img} alt="Photo of a car" />
+        <div className={css.gradient_overlay}></div>
+      </div>
 
       <div className={css.icons} onClick={toggleFavorite}>
         {isFavorite ? (
