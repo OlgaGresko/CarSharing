@@ -1,17 +1,37 @@
-import Select from 'react-select';
+import Select, { components } from 'react-select';
+
+const VALUE_PREFIX = 'To ';
+const VALUE_SUFFIX = '$';
 
 export const SelectPrice = ({ formattedPrices, handleSelectPriceChange }) => {
   return (
     <Select
       onChange={handleSelectPriceChange}
       options={formattedPrices}
-      placeholder={`To $`}
+      placeholder={`  `}
+      components={{
+        SingleValue: ({ children, ...props }) => {
+          return (
+            <components.SingleValue {...props}>
+              {VALUE_PREFIX + children + VALUE_SUFFIX}
+            </components.SingleValue>
+          );
+        },
+        Placeholder: ({ children, ...props }) => {
+          return (
+            <components.Placeholder {...props}>
+              {VALUE_PREFIX + children + VALUE_SUFFIX}
+            </components.Placeholder>
+          );
+        },
+        IndicatorSeparator: () => null,
+      }}
       styles={{
         control: (base, state) => ({
           ...base,
           backgroundColor: '#F7F7FB',
           borderRadius: '14px',
-          width: '125px',
+          width: '155px',
           boxShadow: 'none',
           padding: '8px 10px',
           border: 'none',
