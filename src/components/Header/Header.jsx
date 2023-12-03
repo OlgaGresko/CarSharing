@@ -1,28 +1,40 @@
-import {
-  HeaderContainer,
-  Navigation,
-  StyledLink,
-  IconWrapper,
-} from './Header.styled';
-import sprite from 'assets/sprite.svg';
+import css from './Header.module.css';
+
+import { NavLink } from 'react-router-dom';
 
 export const Header = () => {
   return (
-    <HeaderContainer>
-      <Navigation>
-        <StyledLink to="/first">
-          <IconWrapper>
-            <use href={`${sprite}#icon-logo`} />
-          </IconWrapper>
-          First
-        </StyledLink>
-        <StyledLink to="/second">
-          <IconWrapper>
-            <use href={`${sprite}#icon-logo`} />
-          </IconWrapper>
-          Second
-        </StyledLink>
-      </Navigation>
-    </HeaderContainer>
+    <header className={css.header_wrapper}>
+      <nav className={css.header_navigation}>
+        <div className={css.home_navigation}>
+          <NavLink
+            className={({ isActive }) => {
+              return isActive ? css.activeLink : css.link;
+            }}
+            to="/"
+          >
+            Home
+          </NavLink>
+        </div>
+        <div className={css.pages_navigation}>
+          <NavLink
+            className={({ isActive }) => {
+              return isActive ? css.activeLink : css.link;
+            }}
+            to="/catalog"
+          >
+            Catalog
+          </NavLink>
+          <NavLink
+            className={({ isActive }) => {
+              return isActive ? css.activeLink : css.link;
+            }}
+            to="/favorites"
+          >
+            Favorite
+          </NavLink>
+        </div>
+      </nav>
+    </header>
   );
 };

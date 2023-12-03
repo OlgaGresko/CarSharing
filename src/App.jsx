@@ -1,28 +1,26 @@
+import { lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import SharedLayout from 'components/SharedLayout/SharedLayout';
-import FirstPage from 'pages/FirstPage/FirstPage';
-import SecondPage from 'pages/SecondPage/SecondPage';
-import HalfPage from 'pages/HalfPage/HalfPage';
-import ErrorPage from 'pages/ErrorPage/ErrorPage';
-import { AppWrapper } from './App.styled';
 
-const test = import.meta.env.VITE_API_TEST;
+const HomePage = lazy(() => import('../src/pages/HomePage/HomePage'));
+const CatalogPage = lazy(() => import('../src/pages/CatalogPage/CatalogPage'));
+const FavoritesPage = lazy(() =>
+  import('../src/pages/FavoritesPage/FavoritesPage')
+);
+const ErrorPage = lazy(() => import('../src/pages/ErrorPage/ErrorPage'));
 
 function App() {
-  console.log(test);
   return (
-    <AppWrapper>
+    <div>
       <Routes>
         <Route path="/" element={<SharedLayout />}>
-          <Route path="/first" element={<FirstPage />} />
-          <Route path="/second" element={<SecondPage />}>
-            <Route path=":half" element={<HalfPage />} />
-          </Route>
-
+          <Route index element={<HomePage />} />
+          <Route path="/catalog" element={<CatalogPage />} />
+          <Route path="/favorites" element={<FavoritesPage />} />
           <Route path="*" element={<ErrorPage />} />
         </Route>
       </Routes>
-    </AppWrapper>
+    </div>
   );
 }
 export default App;

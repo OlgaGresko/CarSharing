@@ -1,0 +1,109 @@
+.wrapper {
+  width: 100%;
+  position: relative;
+  height: calc(100vh - 60px);
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.5)
+    ),
+    url(../../assets/background.jpg);
+  background-repeat: no-repeat;
+  background-position: left top;
+  background-size: cover;
+}
+
+p {
+  color: black;
+  font-size: large;
+}
+
+.logotype {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.logo {
+  width: 100%;
+}
+
+.slogan {
+  margin-top: -12px;
+  color: var(--blue);
+  font-weight: 500;
+  letter-spacing: 2px;
+}
+
+.call {
+  position: absolute;
+  bottom: 20px;
+  padding: 0 17px;
+  box-sizing: border-box;
+}
+
+.text {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-header);
+}
+
+.link_text {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--blue);
+}
+
+.arrow {
+  width: 20px;
+  height: 20px;
+  fill: var(--blue);
+}
+
+@media screen and (min-width: 375px) {
+  .call {
+    width: 375px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .text {
+    font-size: 18px;
+  }
+  .link_text {
+    font-size: 18px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .logotype {
+    width: 400px;
+  }
+  .slogan {
+    margin-top: -20px;
+    font-size: 24px;
+    letter-spacing: 3px;
+  }
+  .call {
+    width: 450px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .call {
+    bottom: 250px;
+    transform: translateX(35%);
+  }
+  .text {
+    font-size: 22px;
+  }
+  .link_text {
+    font-size: 22px;
+  }
+}
