@@ -21,6 +21,7 @@ import {
   selectCarsIsLoading,
   selectCarsError,
 } from '../../redux/selectors';
+import { setFilteredAdverts } from '../../redux/carsSlice';
 
 const CatalogPage = () => {
   const cars = useSelector(selectCarsAdverts);
@@ -37,6 +38,12 @@ const CatalogPage = () => {
   useEffect(() => {
     dispatch(getAllCars());
     dispatch(getFirstCars());
+  }, []);
+
+  useEffect(() => {
+    return () => {
+      dispatch(setFilteredAdverts(null));
+    };
   }, []);
 
   const firstCars = useSelector(selectCarsFirstAdverts);
