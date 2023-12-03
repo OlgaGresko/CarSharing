@@ -101,7 +101,7 @@ export const Filter = () => {
 
   return (
     <form className={css.container} onSubmit={handleSubmit}>
-      <label className={css.label} htmlFor="selectedMake">
+      <label className={css.label} >
         Car brand
         <SelectMake
           formattedMakes={formattedMakes}
@@ -109,7 +109,7 @@ export const Filter = () => {
         />
       </label>
 
-      <label className={css.label} htmlFor="selectedPrice">
+      <label className={css.label} >
         Price/ 1 hour
         <SelectPrice
           formattedPrices={formattedPrices}
