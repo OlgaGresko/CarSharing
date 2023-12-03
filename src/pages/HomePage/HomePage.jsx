@@ -14,7 +14,7 @@ const HomePage = () => {
       <div className={css.call}>
         <p className={css.text}>Explore our car rental service!</p>
         <p className={css.text}>
-          Drive away with ease and discover your ideal rental experience.
+          Start your trip easily and discover your ideal rental experience.
         </p>
         <Link className={css.link_text} to="/catalog">
           Try it now
