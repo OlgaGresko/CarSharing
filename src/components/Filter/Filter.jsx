@@ -9,7 +9,6 @@ import { extractPrice } from '../../helpers';
 import { setFilteredAdverts } from '../../redux/carsSlice';
 import { SelectMake } from '../SelectMake/SelectMake';
 import { SelectPrice } from '../SelectPrice/SelectPrice';
-import { PRICES } from '../../helpers';
 
 export const Filter = () => {
   const dispatch = useDispatch();
@@ -50,10 +49,10 @@ export const Filter = () => {
   };
 
   const formattedMakes = makes.map((make) => ({ label: make, value: make }));
-  const formattedPrices = PRICES.map((price) => ({
-    label: price,
-    value: price,
-  }));
+  const formattedPrices = [];
+  for (let i = 30; i <= 500; i += 10) {
+    formattedPrices.push({ label: `${i}`, value: i });
+  }
 
   useEffect(() => {
     dispatch(getAllMakes());

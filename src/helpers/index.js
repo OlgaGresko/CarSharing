@@ -6,5 +6,4 @@ export { splitConditions } from './splitConditions';
 export { divideAge } from './splitConditions';
 export { addComma } from './addComa';
 export { reverseDollar } from './reverseDollar';
-export { PRICES } from './constants';
 export { MAX_LENGTH } from './constants';
