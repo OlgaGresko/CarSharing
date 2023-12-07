@@ -46,11 +46,13 @@
 }
 
 .mileage {
+  position: relative;
   display: flex;
   align-items: baseline;
 }
 
 .input_wrapper_l {
+  position: relative;
   display: flex;
   box-sizing: border-box;
   gap: 6px;
@@ -88,6 +90,14 @@
   font-weight: 500;
   line-height: 1.11;
   cursor: text;
+}
+
+.warning {
+  position: absolute;
+  top: 74px;
+  left: 24px;
+  font-size: 12px;
+  color: red;
 }
 
 @media screen and (min-width: 375px) {

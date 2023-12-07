@@ -8,11 +8,11 @@ export const CarList = ({ cars, toggleCarModal }) => {
   return (
     <div className={css.container}>
 
-       <div className={css.cars_container}>
+       <ul className={css.cars_container}>
         {cars.map((car) => {
         return <CarCard advert={car} toggleCarModal={toggleCarModal} key={nanoid()} />;
       })}
-       </div>
+       </ul>
       
     </div>
   );

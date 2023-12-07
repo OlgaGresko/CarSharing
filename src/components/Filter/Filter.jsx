@@ -21,6 +21,13 @@ export const Filter = () => {
   const [selectedPrice, setSelectedPrice] = useState('');
   const [mileageFrom, setMileageFrom] = useState('');
   const [mileageTo, setMileageTo] = useState('');
+  const [isWarningShown, setIsWarningShown] = useState(false);
+
+  const formatMileage = (value) => {
+    const cleanedValue = value.toString().replace(/,/g, '');
+    const formattedValue = cleanedValue.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    return formattedValue;
+  };
 
   const handleSelectMakeChange = (selectedOption) => {
     const selectedValue = selectedOption.value;
@@ -63,6 +70,14 @@ export const Filter = () => {
     };
 
     const filterCars = (cars, filters) => {
+      if (mileageTo && mileageFrom > mileageTo) {
+        setIsWarningShown(true);
+        setTimeout(() => {
+          setIsWarningShown(false);
+        }, 1500);
+        return;
+      }
+
       let filteredCars = cars;
 
       if (filters.selectedMake) {
@@ -123,13 +138,14 @@ export const Filter = () => {
 
       <div className={css.mileage}>
         <label className={css.label} htmlFor="mileageFrom">
-          Сar mileage / km
+          Car mileage / km
           <div className={css.input_wrapper_l}>
             <span className={css.input_span}>From</span>
             <input
               className={css.input}
               type="text"
               name="mileageFrom"
+              value={formatMileage(mileageFrom)}
               id="mileageFrom"
               onChange={handleInputFromChange}
             />
@@ -144,11 +160,17 @@ export const Filter = () => {
               className={css.input}
               type="text"
               name="mileageTo"
+              value={formatMileage(mileageTo)}
               id="mileageTo"
               onChange={handleInputToChange}
             />
           </div>
         </label>
+        {isWarningShown && (
+          <span className={css.warning}>
+            Value From must be less than value To
+          </span>
+        )}
       </div>
 
       <button className={css.button} type="submit">

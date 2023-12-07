@@ -14,6 +14,7 @@ import {
 } from '../../helpers';
 import { MAX_LENGTH } from '../../helpers';
 import defaultPic from '../../assets/default-car-img.png';
+import { nanoid } from 'nanoid';
 
 export const CarCard = ({ advert, toggleCarModal }) => {
   const dispatch = useDispatch();
@@ -47,7 +48,7 @@ export const CarCard = ({ advert, toggleCarModal }) => {
   };
 
   return (
-    <div className={css.container}>
+    <li className={css.container} key={nanoid()}>
       <div className={css.image_container}>
         <img className={css.image} src={imageSrc} onError={onErrorHandler} alt="Photo of a car" />
         <div className={css.gradient_overlay}></div>
@@ -111,6 +112,6 @@ export const CarCard = ({ advert, toggleCarModal }) => {
       >
         Learn more
       </button>
-    </div>
+    </li>
   );
 };
