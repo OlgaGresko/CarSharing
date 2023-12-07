@@ -9,16 +9,31 @@
 
 .modal_content {
   position: absolute;
-  top: 50%;
+  top: calc(50% + 30px);
   left: 50%;
   width: 100%;
-  min-height: 752px;
+  max-height: calc(100% - 120px);
   transform: translate(-50%, -50%);
   padding: 40px 37px;
   background-color: var(--white);
   border-radius: 24px;
   box-sizing: border-box;
   overflow-y: auto; 
+}
+
+.modal_content::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+.modal_content::-webkit-scrollbar-track {
+  background-color: transparent;
+  border-radius: 24px;
+}
+
+.modal_content::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 2px;
 }
 
 .close_x {
@@ -34,12 +49,14 @@
 @media screen and (min-width: 375px) {
   .modal_content {
     width: 335px;
+    top: 50%;
   }
 }
 
 @media screen and (min-width: 768px) {
   .modal_content {
     width: 541px;
+    min-height: 752px;
   }
 
   .close_x {
