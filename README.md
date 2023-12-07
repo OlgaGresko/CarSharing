@@ -2,9 +2,9 @@
 
 This application is intended for a company that provides car rental services in Ukraine.
 
-[Features](#features)
-[Technologies](#technologies)
-[Quick Start (Installation)](#installation) 
+[Features](#features)  
+[Technologies](#technologies)  
+[Quick Start (Installation)](#installation)  
 
 <a name="features"></a>
 ## Features
@@ -65,5 +65,5 @@ Feel free to customize this installation guide based on your application's speci
 
 =======================================================
 
-Developer - Olga Gresko (https://github.com/OlgaGresko)
+Developer - [Olga Gresko](https://github.com/OlgaGresko)
 

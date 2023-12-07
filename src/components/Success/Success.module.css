@@ -52,16 +52,17 @@
   height: 44px;
   padding: 12px 50px;
   border-radius: 12px;
-  background: #3470ff;
+  background-color: var(--blue);
   color: var(--white);
   font-weight: 600;
   line-height: 1.42;
   cursor: pointer;
+  transition: background-color var(--transition-function);
 }
 
 .button:hover,
 .button:focus {
-  background: var(--hover-blue);
+  background-color: var(--hover-blue);
 }
 
 @media screen and (min-width: 768px) {

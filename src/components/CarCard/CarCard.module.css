@@ -111,15 +111,16 @@
   padding: 12px 50px;
   text-align: center;
   border-radius: 12px;
-  background: #3470ff;
+  background-color: var(--blue);
   color: var(--white);
   font-size: 14px;
   font-weight: 600;
   line-height: 1.42;
   cursor: pointer;
+  transition: background-color var(--transition-function);
 }
 
 .button:hover,
 .button:focus {
-  background: var(--hover-blue);
+  background-color: var(--hover-blue);
 }
