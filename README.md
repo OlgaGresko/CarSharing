@@ -1,132 +1,69 @@
 # CarSharing app
 
-Цей додаток призначений для компанії, яка реалізує послугу надання автомобілів в оренду в Україні.
+This application is intended for a company that provides car rental services in Ukraine.
 
-Додаток складається із 3х сторінок:
+[Features](#features)
+[Technologies](#technologies)
+[Quick Start (Installation)](#installation) 
 
-![Сторінка Home](./src/assets/home-page.jpg)
+<a name="features"></a>
+## Features
 
-- домашня сторінка (Home) з загальним описом послуг, що надає компанія;
+The application consists of 3 pages:
 
-![Сторінка Catalog](./src/assets/catalog-page.jpg)
+![Home Page](./src/assets/home-page.jpg)
 
-- сторінка, що містить каталог автівок різної комплектації (Catalog), які користувач може фільтрувати за маркою, ціною за годину оренди авто та кількістю кілометрів, яку подолав автомобіль під час його експлуатації (пробіг);
+- Home page with a general description of services provided by the company;
 
-![Сторінка Favorites](./src/assets/favorites-page.jpg)
+![Catalog Page](./src/assets/catalog-page.jpg)
 
-- сторінка з оголошеннями, які були додані користувачем в улюблені.
+- a page containing a catalog of cars of various configurations (Catalog Page), which the user can filter by brand, price per hour of car rental and the number of kilometers covered by the car during its operation (mileage);
 
-Розробник - Ольга Гресько (https://github.com/OlgaGresko)
+![Favorites Page](./src/assets/favorites-page.jpg)
+
+- Favorites Page with ads that have been added to favorites by the user.
 
 
-===========================================================================================================================================================================
+<a name="technologies"></a>
+## Technologies 
+
+This app is created using the following technologies:
+HTML, CSS, JavaScript, React, Redux Toolkit, Axios.
 
 
-# React + Vite template
+<a name="installation"></a>
+## Quick Start (Installation) 
 
-Цей проєкт було створено за допомогою [Create Vite](https://vitejs.dev/). Для
-знайомства і налаштування додаткових можливостей
-[звернися до документації](https://vitejs.dev/guide/).
+To get started with this React application, follow these steps:
 
-## Створення репозиторію за шаблоном
+Clone this repository to your local machine using the following command:
 
-Використовуй цей репозиторій організації GoIT як шаблон для створення
-репозиторію свого проєкту. Для цього натисни на кнопку `"Use this template"` і
-обери опцію `"Create a new repository"`, як показано на зображенні.
-
-![Creating repo from a template step 1](./src/assets/template-step-1.png)
-
-На наступному кроці відкриється сторінка створення нового репозиторію. Заповни
-поле його імені, переконайся що репозиторій публічний, після чого натисни кнопку
-`"Create repository from template"`.
-
-![Creating repo from a template step 2](./src/assets/template-step-2.png)
-
-Після того як репозиторій буде створено, необхідно перейти в налаштування
-створеного репозиторію на вкладку `Settings` > `Actions` > `General` як показано
-на зображенні.
-
-![Settings GitHub Actions permissions step 1](./src/assets/gh-actions-perm-1.png)
-
-Проскроливши сторінку до самого кінця, у секції `"Workflow permissions"` вибери
-опцію `"Read and write permissions"` і постав галочку в чекбоксі. Це необхідно
-для автоматизації процесу деплою проєкту.
-
-![Settings GitHub Actions permissions step 2](./src/assets/gh-actions-perm-2.png)
-
-Тепер у тебе є особистий репозиторій проєкту, зі структурою файлів і папок
-репозиторія-шаблону. Далі працюй з ним як з будь-яким іншим особистим
-репозиторієм, клонуй його собі на комп'ютер, пиши код, роби комміти і відправляй
-їх на GitHub.
-
-## Підготовка до роботи
-
-1. Переконайся, що на комп'ютері встановлена LTS-версія Node.js.
-   [Скачай і встанови](https://nodejs.org/en/) її якщо необхідно.
-2. Встановіть базові залежності проекту командою `npm install`.
-3. Запустіть режим розробки, виконавши команду `npm run dev`.
-4. Перейди в браузері за адресою, що зазначено в терміналі.
-
-## Деплой
-
-Продакшн версія проєкту буде автоматично збиратися і деплоїтися на GitHub Pages,
-у гілку `gh-pages`, щоразу, коли оновлюється гілка `main`. Наприклад, після
-прямого пушу або прийнятого пул-реквесту. Для цього необхідно у файлі
-`vite.config.js` відредагувати поле `base`, замінивши `react_vite` на свою назву
-репозиторію `"/your_repo_name"`, і відправити зміни на GitHub.
-
-Далі необхідно зайти в налаштування GitHub-репозиторію (`Settings` > `Pages`) і
-виставити роздачу продакшн версії файлів із папки `/root` гілки `gh-pages`, якщо
-це не було зроблено автоматично.
-
-![GitHub Pages settings](./src/assets/repo-settings.png)
-
-### Статус деплоя
-
-Статус деплою крайнього коміту відображається іконкою біля його ідентифікатора.
-
-- **Жовтий колір** - виконується збірка і деплой проєкту.
-- **Зелений колір** - деплой завершився успішно.
-- **Червоний колір** - під час збирання або деплою сталася помилка.
-
-Детальнішу інформацію про статус можна подивитися, клікнувши на іконку, і в
-випадаючому вікні перейти за посиланням `Details`.
-
-![Deployment status](./src/assets/deploy-status.png)
-
-### Жива сторінка
-
-Через якийсь час, зазвичай кілька хвилин, живу сторінку можна буде подивитися за
-адресою, вказаною в налаштуваннях GitHub-репозиторію (`Settings` > `Pages`).
-
-![GitHub-pages URL](./src/assets/gh-pages-url.png)
-
-Якщо відкривається порожня сторінка, переконайся що у вкладці `Console` немає
-помилок пов'язаних із неправильними шляхами до CSS і JS файлів проекту
-(**404**). Швидше за все найімовірніше, у тебе неправильне значення поля `base`
-у файлі `vite.config.js`.
-
-### Маршрутизація
-
-Якщо додаток використовує бібліотеку `react-router-dom` для маршрутизації,
-необхідно додатково налаштувати компонент `<BrowserRouter>`, передавши в пропе
-`basename` точну назву твого репозиторію. Слеш на початку рядка обов'язковий.
-
-```jsx
-<BrowserRouter basename="/your_repo_name">
-  <App />
-</BrowserRouter>
+```bash
+git clone https://github.com/OlgaGresko/CarSharing.git
 ```
-### Додавання змінних в  .env
-Для зберігання конфігураційних даних, таких як API ключі, адреси серверів, порти та інші змінні використовуйте файл `.env`. Для цього необхідно з назви файлу `.env.template` видалити зайві ".template",після чого файл відповідатиме умовам файлу `.ignore` і буде зберігатися лише локально, не публікуючись на віддаленому репозиторії з метою безпеки. Задля використання змінних на GitHub-pages усі змінні, передбачені файлом .env, слід додати до файлу `.github/workflows/deploy.yml`, а також до налаштувань репозиторію. Для цього слід перейти (`Settings` > `Secrets and variables` > `Actions`)
 
-![Add enviroments from .env](./src/assets/secrets.png)
+Navigate into the project directory:
+```bash
+cd your-repository
+```
 
-## Як це працює
+Install the required dependencies using npm or Yarn:
 
-1. Після кожного пушу в гілку `main` GitHub-репозиторію, запускається
-   спеціальний скрипт (GitHub Action) з файлу `.github/workflows/deploy.yml`.
-2. Усі файли репозиторію копіюються на сервер, де проєкт ініціалізується і
-   проходить збірку перед деплоєм. 3 Якщо всі кроки пройшли успішно, зібрана
-   продакшн-версія файлів проєкту відправляється в гілку `gh-pages`. В іншому
-   випадку, в логах виконання скрипта буде вказано в чому проблема.
+```bash
+npm install
+```
+
+After installing the dependencies, start the development server:
+
+```bash
+npm run dev
+```
+
+Open [http://localhost:5174](http://localhost:5174) in your web browser to view the application. The page will reload if you make edits and you'll also see any lint errors in the console.
+
+Feel free to customize this installation guide based on your application's specific requirements or any additional steps users might need to follow to run your React application successfully.
+
+=======================================================
+
+Developer - Olga Gresko (https://github.com/OlgaGresko)
+
