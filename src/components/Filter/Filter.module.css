@@ -29,8 +29,7 @@
   transition: background-color var(--transition-function);
 }
 
-.button:hover,
-.button:focus {
+.button:hover {
   background-color: var(--hover-blue);
 }
 
