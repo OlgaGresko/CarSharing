@@ -13,12 +13,14 @@ import {
   makeFirstLetterUpperCase,
 } from '../../helpers';
 import { MAX_LENGTH } from '../../helpers';
+import defaultPic from '../../assets/default-car-img.png';
 
 export const CarCard = ({ advert, toggleCarModal }) => {
   const dispatch = useDispatch();
   const favorites = useSelector(selectFavoritesFavorites);
   const [isPremium, setIsPremium] = useState(false);
   const [isFavorite, setIsFavorite] = useState(false);
+  const [imageSrc, setImageSrc] = useState(advert.img || defaultPic);
 
   useEffect(() => {
     setIsFavorite(favorites.some((favorite) => favorite.id === advert.id));
@@ -40,10 +42,14 @@ export const CarCard = ({ advert, toggleCarModal }) => {
     }
   };
 
+  const onErrorHandler = () => {
+    setImageSrc(defaultPic);
+  };
+
   return (
     <div className={css.container}>
       <div className={css.image_container}>
-        <img className={css.image} src={advert.img} alt="Photo of a car" />
+        <img className={css.image} src={imageSrc} onError={onErrorHandler} alt="Photo of a car" />
         <div className={css.gradient_overlay}></div>
       </div>
 
